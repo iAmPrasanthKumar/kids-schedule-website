@@ -99,6 +99,21 @@ h1 {
   align-items: center;
   justify-content: center;
   z-index: 10;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.activity[style*="cursor: pointer"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.activity[style*="cursor: pointer"]:hover::after {
+  content: " 🎯";
 }
 
 /* Current Time Indicator */

@@ -1,4 +1,5 @@
 let activitiesData = [];
+let brainGamesData = [];
 
 // Load activities from JSON file
 async function loadActivities() {
@@ -9,6 +10,26 @@ async function loadActivities() {
   } catch (error) {
     console.error('Error loading activities:', error);
   }
+}
+
+// Load brain games from JSON file
+async function loadBrainGames() {
+  try {
+    const response = await fetch('brain-games.json');
+    brainGamesData = await response.json();
+  } catch (error) {
+    console.error('Error loading brain games:', error);
+  }
+}
+
+// Get random brain game suggestion
+function getRandomBrainGame() {
+  if (brainGamesData.length === 0) return "Practice counting or simple puzzles";
+  
+  const randomCategory = brainGamesData[Math.floor(Math.random() * brainGamesData.length)];
+  const randomGame = randomCategory.games[Math.floor(Math.random() * randomCategory.games.length)];
+  
+  return `${randomCategory.category}: ${randomGame}`;
 }
 
 
@@ -68,6 +89,16 @@ function createActivities() {
       activityDiv.style.textShadow = 'none';
     }
     
+    // Add click functionality for brain games
+    if (activity.label.toLowerCase().includes('brain game')) {
+      activityDiv.style.cursor = 'pointer';
+      activityDiv.title = 'Click for game suggestion!';
+      activityDiv.addEventListener('click', () => {
+        const suggestion = getRandomBrainGame();
+        alert(`🧠 Brain Game Suggestion:\n\n${suggestion}`);
+      });
+    }
+    
     eventsColumn.appendChild(activityDiv);
   });
 }
@@ -107,6 +138,7 @@ function updateCurrentTime() {
 // Initialize the schedule
 async function init() {
   await loadActivities();
+  await loadBrainGames();
   updateCurrentTime();
   setInterval(updateCurrentTime, 60000); // Update every minute
 }

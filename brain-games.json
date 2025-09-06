@@ -1,0 +1,80 @@
+[
+  {
+    "category": "Memory Games",
+    "games": [
+      "Simon Says sequence memory game",
+      "Remember and repeat number sequences",
+      "Memory card matching game",
+      "Story sequence recall game",
+      "Picture memory challenge",
+      "Color pattern memory game",
+      "Word list memorization",
+      "Face-name memory game"
+    ]
+  },
+  {
+    "category": "Logic Puzzles", 
+    "games": [
+      "Sudoku for kids (4x4 or 6x6)",
+      "Pattern completion puzzles",
+      "Logic grid puzzles",
+      "Sequence puzzles (what comes next?)",
+      "Shape sorting challenges",
+      "Number logic puzzles",
+      "Color logic patterns",
+      "Simple riddles and brain teasers"
+    ]
+  },
+  {
+    "category": "Word Games",
+    "games": [
+      "Word association game",
+      "Rhyming word challenges",
+      "Alphabet category game (A-Z animals)",
+      "Word building with letter tiles",
+      "Synonym and antonym matching",
+      "Story building (one word at a time)",
+      "Word scramble puzzles",
+      "20 Questions game"
+    ]
+  },
+  {
+    "category": "Math Games",
+    "games": [
+      "Mental math challenges",
+      "Number pattern recognition",
+      "Counting games with objects",
+      "Simple addition/subtraction races",
+      "Shape recognition and counting",
+      "Time telling practice",
+      "Money counting games",
+      "Measurement estimation games"
+    ]
+  },
+  {
+    "category": "Creative Thinking",
+    "games": [
+      "Alternative uses for common objects",
+      "Story creation from random words",
+      "Drawing completion challenges",
+      "Invention brainstorming",
+      "Problem-solving scenarios",
+      "Creative categorization games",
+      "Imagination building exercises",
+      "What-if scenario games"
+    ]
+  },
+  {
+    "category": "Observation Games",
+    "games": [
+      "Spot the difference puzzles",
+      "I Spy games with details",
+      "Counting objects in pictures",
+      "Color identification challenges",
+      "Size comparison games",
+      "Pattern recognition in nature",
+      "Detail memory from pictures",
+      "Scavenger hunt observations"
+    ]
+  }
+]
