@@ -2,26 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* Prevent double-tap zoom on all elements */
-  touch-action: manipulation;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: #f5f5f5;
   padding: 20px;
-  /* Prevent double-tap zoom on mobile */
+}
+
+button {
   touch-action: manipulation;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  /* Additional iOS Safari zoom prevention */
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
 }
 
 .container {

@@ -380,23 +380,8 @@ function updateCurrentTime() {
   }
 }
 
-// Prevent double-tap zoom on mobile
-function preventDoubleTapZoom() {
-  let lastTouchEnd = 0;
-  document.addEventListener('touchend', function (event) {
-    const now = (new Date()).getTime();
-    if (now - lastTouchEnd <= 300) {
-      event.preventDefault();
-    }
-    lastTouchEnd = now;
-  }, false);
-}
-
 // Initialize the schedule
 async function init() {
-  // Prevent double-tap zoom
-  preventDoubleTapZoom();
-  
   // Activities data is now loaded from activities.js automatically
   createActivities();
   updateCurrentTime();
