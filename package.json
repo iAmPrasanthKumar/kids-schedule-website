@@ -8,8 +8,8 @@
     "dev": "npm run build:dev && http-server dist -p 8000 -c-1 --cors -o",
     "dev:dist": "npm run build:dev && http-server dist -p 8000 -c-1 --cors -o",
     "start": "npm run dev",
-    "build": "NODE_ENV=production babel src config --out-dir dist --copy-files && cp styles.css dist/",
-    "build:dev": "NODE_ENV=development babel src config --out-dir dist --copy-files --source-maps && cp styles.css dist/",
+    "build": "NODE_ENV=production babel src --out-dir dist/src --copy-files && babel config --out-dir dist/config --copy-files && cp index.html dist/",
+    "build:dev": "NODE_ENV=development babel src --out-dir dist/src --copy-files --source-maps && babel config --out-dir dist/config --copy-files --source-maps && cp index.html dist/",
     "build:watch": "npm run build:dev && concurrently \"babel src config --out-dir dist --copy-files --source-maps --watch\" \"http-server dist -p 8000 -c-1 --cors\"",
     "test": "npm run build && http-server dist -p 8002 -c-1",
     "clean": "rm -rf dist"
