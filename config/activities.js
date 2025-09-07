@@ -1,8 +1,6 @@
 // Kids Daily Schedule Activities Configuration
-import morningPhysicalActivities from './pregeneratedAISuggestions/morning-physical-activities.js';
-import eveningPhysicalActivities from './pregeneratedAISuggestions/evening-physical-activities.js';
-import morningBrainGames from './pregeneratedAISuggestions/morning-brain-games.js';
-import eveningBrainGames from './pregeneratedAISuggestions/evening-brain-games.js';
+import physicalActivities from './pregeneratedAISuggestions/physical-activities.js';
+import brainGames from './pregeneratedAISuggestions/brain-games.js';
 import bedtimeStories from './pregeneratedAISuggestions/bedtimeStories.js';
 
 const activitiesData = [
@@ -19,7 +17,7 @@ const activitiesData = [
     "label": "Exercise",
     "color": "#4CAF50",
     "description": "Morning physical activity to energize the body and boost metabolism for the day",
-    "aiSuggestions": morningPhysicalActivities,
+    "aiSuggestions": physicalActivities,
     "aiEnabled": true
   },
   {
@@ -32,10 +30,10 @@ const activitiesData = [
   {
     "startTime": "8:30",
     "endTime": "8:45",
-    "label": "Brain Game",
+    "label": "Morning Brain Game",
     "color": "#2196F3",
     "description": "Short cognitive exercise to activate the mind and prepare for learning at school",
-    "aiSuggestions": morningBrainGames,
+    "aiSuggestions": brainGames,
     "aiEnabled": true
   },
   {
@@ -73,7 +71,7 @@ const activitiesData = [
     "label": "Play Physical Game",
     "color": "#4CAF50",
     "description": "Evening physical activity to release energy and transition from school to home mode",
-    "aiSuggestions": eveningPhysicalActivities,
+    "aiSuggestions": physicalActivities,
     "aiEnabled": true
   },
   {
@@ -86,10 +84,10 @@ const activitiesData = [
   {
     "startTime": "19:30",
     "endTime": "20:00",
-    "label": "Brain Game",
+    "label": "Evening Brain Game ",
     "color": "#2196F3",
     "description": "Evening cognitive activity to wind down while keeping the mind gently engaged",
-    "aiSuggestions": eveningBrainGames,
+    "aiSuggestions": brainGames,
     "aiEnabled": true
   },
   {
