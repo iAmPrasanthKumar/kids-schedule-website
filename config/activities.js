@@ -3,6 +3,7 @@ import morningPhysicalActivities from './pregeneratedAISuggestions/morning-physi
 import eveningPhysicalActivities from './pregeneratedAISuggestions/evening-physical-activities.js';
 import morningBrainGames from './pregeneratedAISuggestions/morning-brain-games.js';
 import eveningBrainGames from './pregeneratedAISuggestions/evening-brain-games.js';
+import bedtimeStories from './pregeneratedAISuggestions/bedtimeStories.js';
 
 const activitiesData = [
   {
@@ -97,7 +98,9 @@ const activitiesData = [
     "label": "Bedtime Stories",
     "color": "#FFEB3B",
     "textColor": "#333",
-    "description": "Calming story time to relax the mind and prepare for peaceful sleep"
+    "description": "Calming story time to relax the mind and prepare for peaceful sleep",
+    "aiSuggestions": bedtimeStories,
+    "aiEnabled": true
   },
   {
     "startTime": "20:30",
