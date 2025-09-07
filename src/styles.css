@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Prevent double-tap zoom on all elements */
+  touch-action: manipulation;
 }
 
 body {
@@ -16,6 +18,10 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  /* Additional iOS Safari zoom prevention */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .container {
