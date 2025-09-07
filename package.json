@@ -1,0 +1,27 @@
+{
+  "name": "kids-schedule-website",
+  "version": "1.0.0",
+  "description": "Interactive daily schedule for kids with AI suggestions",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build:dev && http-server dist -p 8000 -c-1 --cors -o",
+    "dev:dist": "npm run build:dev && http-server dist -p 8000 -c-1 --cors -o",
+    "start": "npm run dev",
+    "build": "NODE_ENV=production babel src config --out-dir dist --copy-files && cp index.html styles.css dist/ && sed -i '' 's|src/script.js|script.js|g' dist/index.html && sed -i '' 's|../config/activities.js|./activities.js|g' dist/script.js",
+    "build:dev": "NODE_ENV=development babel src config --out-dir dist --copy-files --source-maps && cp index.html styles.css dist/ && sed -i '' 's|src/script.js|script.js|g' dist/index.html && sed -i '' 's|../config/activities.js|./activities.js|g' dist/script.js",
+    "build:watch": "npm run build:dev && concurrently \"babel src config --out-dir dist --copy-files --source-maps --watch\" \"http-server dist -p 8000 -c-1 --cors\"",
+    "test": "npm run build && http-server dist -p 8002 -c-1",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["kids", "schedule", "ai", "suggestions"],
+  "author": "Prasanth Kumar Allam <kumarprasanth119@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.22.0",
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "http-server": "^14.1.0",
+    "concurrently": "^8.2.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "browsers": ["last 2 versions", "ie >= 11"]
+            },
+            "modules": false,
+            "debug": false
+          }
+        ]
+      ],
+      "compact": false,
+      "minified": false,
+      "comments": true
+    },
+    "production": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "browsers": ["last 2 versions", "ie >= 11"]
+            },
+            "modules": false,
+            "debug": false
+          }
+        ]
+      ],
+      "compact": true,
+      "minified": true,
+      "comments": false
+    }
+  }
+}

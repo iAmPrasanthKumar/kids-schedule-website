@@ -19,6 +19,7 @@ body {
   overflow: hidden;
 }
 
+
 h1 {
   text-align: center;
   padding: 20px;
@@ -114,6 +115,374 @@ h1 {
 
 .activity[style*="cursor: pointer"]:hover::after {
   content: " 🎯";
+}
+
+
+.ai-icon {
+  font-size: 0.8em;
+  opacity: 0.8;
+  margin-left: 4px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.suggestion-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.85em;
+  font-weight: normal;
+  font-style: italic;
+  margin-left: 4px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+/* Hover effects for desktop */
+.activity.ai-enabled:hover .suggestion-link {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Touch-friendly styles for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .suggestion-link {
+    opacity: 1;
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* Always show suggestion link on small screens */
+@media (max-width: 768px) {
+  .suggestion-link {
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
+
+.activity.ai-enabled:hover .ai-icon {
+  opacity: 1;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Desktop Modal Styles */
+.activity-modal,
+.suggestion-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Mobile Full-Page Styles */
+.activity-fullpage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1000;
+  overflow-y: auto;
+  animation: slideUpIn 0.3s ease-out;
+}
+
+@keyframes slideUpIn {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.fullpage-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fullpage-header {
+  background: white;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #eee;
+}
+
+.fullpage-header h2 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.fullpage-header .close-btn {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.fullpage-header .close-btn:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+}
+
+.fullpage-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.fullpage-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  background: #f9f9f9;
+  display: flex;
+  gap: 10px;
+  justify-content: stretch;
+}
+
+.fullpage-footer .btn-primary,
+.fullpage-footer .btn-secondary {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.4em;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #333;
+  background: #f0f0f0;
+  border-radius: 50%;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+/* Activity Details Section */
+.activity-details {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.activity-description {
+  font-style: italic;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.activity-time {
+  display: flex;
+  gap: 10px;
+}
+
+.activity-time .duration {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* AI Suggestion Section */
+.ai-suggestion-section {
+  border-top: 2px solid #e0e0e0;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.ai-suggestion-section h3 {
+  color: #2196F3;
+  margin: 0 0 15px 0;
+}
+
+.modal-body h3 {
+  margin: 0 0 15px 0;
+  color: #2196F3;
+  font-size: 1.3em;
+}
+
+.suggestion-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.suggestion-meta span {
+  background: #f5f5f5;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.procedure, .benefits, .materials {
+  margin-bottom: 20px;
+}
+
+.procedure h4, .benefits h4, .materials h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.procedure ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.procedure li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.benefits p, .materials p {
+  margin: 0;
+  line-height: 1.4;
+  color: #555;
+}
+
+.modal-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: #2196F3;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1976D2;
+}
+
+.btn-secondary {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+}
+
+/* Clean approach - descriptions shown in AI modals only */
+
+/* Mobile responsive design - placed at end to override desktop styles */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+    background: white;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  h1 {
+    padding: 15px 10px;
+    font-size: 1.5rem;
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .calendar-container {
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding-top: 10px;
+  }
+  
+  .time-column {
+    width: 55px;
+  }
+  
+  
+  .activity {
+    font-size: 11px;
+    padding: 2px 4px;
+  }
+  
+  .suggestion-link {
+    font-size: 0.8em;
+  }
 }
 
 /* Current Time Indicator */
