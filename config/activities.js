@@ -96,7 +96,7 @@ const activitiesData = [
     "startTime": "20:00",
     "endTime": "20:30",
     "label": "Bedtime Stories",
-    "color": "brown",
+    "color": "purple",
     "textColor": "#333",
     "description": "Calming story time to relax the mind and prepare for peaceful sleep",
     "aiSuggestions": bedtimeStories,
