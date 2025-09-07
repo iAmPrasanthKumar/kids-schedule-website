@@ -1,5 +1,5 @@
 // Import activities data
-import activitiesData from '../config/activities.js';
+import activitiesData from './activities.js';
 
 // Track last shown suggestions to avoid repeats
 let lastShownSuggestions = new Map();

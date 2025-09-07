@@ -8,8 +8,8 @@
     "dev": "npm run build:dev && http-server dist -p 8000 -c-1 --cors -o",
     "dev:dist": "npm run build:dev && http-server dist -p 8000 -c-1 --cors -o",
     "start": "npm run dev",
-    "build": "NODE_ENV=production babel src config --out-dir dist --copy-files && cp index.html styles.css dist/ && sed -i '' 's/src\\/script.js/script.js/g' dist/index.html && sed -i '' 's/\\.\\.\\/config\\/activities.js/.\\/activities.js/g' dist/script.js",
-    "build:dev": "NODE_ENV=development babel src config --out-dir dist --copy-files --source-maps && cp index.html styles.css dist/ && sed -i '' 's/src\\/script.js/script.js/g' dist/index.html && sed -i '' 's/\\.\\.\\/config\\/activities.js/.\\/activities.js/g' dist/script.js",
+    "build": "NODE_ENV=production babel src config --out-dir dist --copy-files && cp styles.css dist/",
+    "build:dev": "NODE_ENV=development babel src config --out-dir dist --copy-files --source-maps && cp styles.css dist/",
     "build:watch": "npm run build:dev && concurrently \"babel src config --out-dir dist --copy-files --source-maps --watch\" \"http-server dist -p 8000 -c-1 --cors\"",
     "test": "npm run build && http-server dist -p 8002 -c-1",
     "clean": "rm -rf dist"
